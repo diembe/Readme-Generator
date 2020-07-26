@@ -18,8 +18,7 @@ const questions = [
 		  type: "editor",
 		  message: "What are your Installation Instructions?",
 		  name: "installation"
-	}
-	/*
+	},
 	{
 		type: "editor",
 		message: "What is your Usage Information?",
@@ -34,17 +33,26 @@ const questions = [
 		type: "editor",
 		message: "What are your Test Instructions?",
 		name: "test_instructions"
+	},
+	{
+		type: "list",
+		message: "Choose your Github License:",
+		name: "license",
+		choices: ["MIT License", "The Apache License", "The GPL License"]
 	}
-	*/
 ];
 
 // function to write README file
 function writeToFile(fileName, data) {
-	fs.appendFile(`${fileName}.md`, data, function (err) {
+
+	console.log(data);
+
+	fs.writeFile(`${fileName}.md`, data, function (err) {
 	if (err) return console.log(err);
 		console.log('Error writing to file.');
+		console.log(err);
 	});
-	process.exit();
+	//process.exit();
 }
 
 // function to initialize program
@@ -55,11 +63,12 @@ function init(questions) {
 
 	const sanitizedTitle = response.title;
 
-	const data = `# ${response.title}\n\n## Description\n\n${response.description}\n## Table of Contents\n\nInstallation\nUsage Information\nContribution Guidelines\nTest Instructions\n## Installation\n\n${response.installation}\n`
+	const allData = `# ${response.title}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\nInstallation\nUsage Information\nContribution Guidelines\nTest Instructions\n\nLicense\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}## Test Instructions\n\n${response.test_instructions}\n\n`;
 
-	writeToFile(sanitizedTitle, data);
+	writeToFile(sanitizedTitle, allData);
 	
 	/*
+
 	const title = `# ${response.title}\n\n`;
 	writeToFile(sanitizedTitle, title);	
 
