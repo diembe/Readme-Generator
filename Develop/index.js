@@ -92,7 +92,7 @@ function init(questions) {
 		license_description = 'Notice: Covered under The GPL License';
 	}
 
-	const allData = `# ${response.title}\n\n${license_badge}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\n[- Installation](#installation)\n- Usage Information\n- Contribution Guidelines\n- Test Instructions\n\n- Questions\n\n- License\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}\n\n## Test Instructions\n\n${response.test_instructions}\n\n## Questions\n\n[Github](https://github.com/${response.github_username})\n\nEmail: ${response.email}\n\nAdditional contact info: ${response.contact}\n\n## License\n\n${license_badge} | ${license_description}`;
+	const allData = `# ${response.title}\n\n${license_badge}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\n[- Installation](#installation)\n[- Usage Information](#usage-information)\n[- Contribution Guidelines](contribution-guidelines)\n[- Test Instructions](#test-instructions)\n\n[- Questions](#questions)\n\n[- License](#license)\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}\n\n## Test Instructions\n\n${response.test_instructions}\n\n## Questions\n\nGithub: [https://github.com/${response.github_username}](https://github.com/${response.github_username})\n\nEmail: ${response.email}\n\nAdditional contact info: ${response.contact}\n\n## License\n\n${license_badge} | ${license_description}`;
 
 	writeToFile(sanitizedTitle, allData);
 	

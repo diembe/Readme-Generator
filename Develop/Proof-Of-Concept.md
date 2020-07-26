@@ -1,6 +1,6 @@
-# Test23
+# Proof-Of-Concept
 
-![GPL License](./assets/gpl_license_1.png)
+![Apache License](./assets/apache_license_1.png)
 
 ## Description
 
@@ -39,8 +39,8 @@ asdf
 
 Email: contact@davebean.net
 
-Additional contact info: There is no additional info
+Additional contact info: There is no additional contact info
 
 ## License
 
-![GPL License](./assets/gpl_license_1.png) | Notice: Covered under The GPL License
+![Apache License](./assets/apache_license_1.png) | Notice: Covered under The Apache License
