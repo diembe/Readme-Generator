@@ -72,7 +72,7 @@ function init(questions) {
 		chosenLicense = "![GPL License](./assets/gpl_license_1.png)"
 	}
 
-	const allData = `# ${response.title}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\nInstallation\nUsage Information\nContribution Guidelines\nTest Instructions\n\nLicense\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}\n\n## Test Instructions\n\n${response.test_instructions}\n\n## License\n\n${chosenLicense}`;
+	const allData = `# ${response.title} ${chosenLicense}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\n- Installation\n- Usage Information\n- Contribution Guidelines\n- Test Instructions\n\n- License\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}\n\n## Test Instructions\n\n${response.test_instructions}\n\n## License\n\n${chosenLicense}`;
 
 	writeToFile(sanitizedTitle, allData);
 	
