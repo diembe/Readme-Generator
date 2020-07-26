@@ -64,16 +64,20 @@ function init(questions) {
 
 	const sanitizedTitle = response.title;
 
-	let chosenLicense = '';
+	let license_badge = '';
+	let license_description = '';
 	if (response.license = "The MIT License") {
-		chosenLicense = "![MIT License](./assets/mit_license_1.png)"
+		license_badge = "![MIT License](./assets/mit_license_1.png)"
+		license_description = 'Notice: Covered under The MIT License';
 	} else if (response.license = "The Apache License") {
-		chosenLicense = "![Apache License](./assets/apache_license_1.png)"
+		license_badge = "![Apache License](./assets/apache_license_1.png)"
+		license_description = 'Notice: Covered under The Apache License';
 	} else if (response.license = "The GPL License") {
-		chosenLicense = "![GPL License](./assets/gpl_license_1.png)"
+		license_badge = "![GPL License](./assets/gpl_license_1.png)"
+		license_description = 'Notice: Covered under The GPL License';
 	}
 
-	const allData = `# ${response.title} ${chosenLicense}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\n- Installation\n- Usage Information\n- Contribution Guidelines\n- Test Instructions\n\n- License\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}\n\n## Test Instructions\n\n${response.test_instructions}\n\n## License\n\n${chosenLicense}`;
+	const allData = `# ${response.title}\n\n${license_badge}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\n- Installation\n- Usage Information\n- Contribution Guidelines\n- Test Instructions\n\n- License\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}\n\n## Test Instructions\n\n${response.test_instructions}\n\n## License\n\n${license_badge} | ${license_description}`;
 
 	writeToFile(sanitizedTitle, allData);
 	
