@@ -1,6 +1,6 @@
 # Readme-Generator
 
-Using the 'inquirer' library, Readme Generator asks the user relevant questions to auto-generate a README.md file for their Github project. Answers are recorded and formatted, with linking Table of Contents, License Badge, and License Summary.
+Using the 'inquirer' library, Readme Generator asks the user relevant questions to auto-generate a README.md file for their Github project. Answers are recorded and formatted, with linking Table of Contents, License Badge, and License Summary. To run, simply execute the script from CLI with `node index.js` (see screenshot below);
 
 [Github Link](https://github.com/diembe/Readme-Generator)
 
