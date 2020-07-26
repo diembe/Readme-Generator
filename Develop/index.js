@@ -7,7 +7,7 @@ const questions = [
 		type: "input",
 		message: "What is your project's Title?",
 		name: "title"
-	  },
+	},
 	  {
 		type: "editor",
 		message: "What is your project's Description?",
@@ -39,6 +39,21 @@ const questions = [
 		message: "Choose your Github License:",
 		name: "license",
 		choices: ["The MIT License", "The Apache License", "The GPL License"]
+	},
+	{
+		type: "input",
+		message: "What is your Github username?",
+		name: "github_username"
+	},
+	{
+		type: "input",
+		message: "What is your email?",
+		name: "email"
+	},
+	{
+		type: "input",
+		message: "Additional info for contacting you:",
+		name: "contact"
 	}
 ];
 
@@ -66,18 +81,18 @@ function init(questions) {
 
 	let license_badge = '';
 	let license_description = '';
-	if (response.license = "The MIT License") {
+	if (response.license === "The MIT License") {
 		license_badge = "![MIT License](./assets/mit_license_1.png)"
 		license_description = 'Notice: Covered under The MIT License';
-	} else if (response.license = "The Apache License") {
+	} else if (response.license === "The Apache License") {
 		license_badge = "![Apache License](./assets/apache_license_1.png)"
 		license_description = 'Notice: Covered under The Apache License';
-	} else if (response.license = "The GPL License") {
+	} else if (response.license === "The GPL License") {
 		license_badge = "![GPL License](./assets/gpl_license_1.png)"
 		license_description = 'Notice: Covered under The GPL License';
 	}
 
-	const allData = `# ${response.title}\n\n${license_badge}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\n- Installation\n- Usage Information\n- Contribution Guidelines\n- Test Instructions\n\n- License\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}\n\n## Test Instructions\n\n${response.test_instructions}\n\n## License\n\n${license_badge} | ${license_description}`;
+	const allData = `# ${response.title}\n\n${license_badge}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\n[- Installation](#installation)\n- Usage Information\n- Contribution Guidelines\n- Test Instructions\n\n- Questions\n\n- License\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}\n\n## Test Instructions\n\n${response.test_instructions}\n\n## Questions\n\n[Github](https://github.com/${response.github_username})\n\nEmail: ${response.email}\n\nAdditional contact info: ${response.contact}\n\n## License\n\n${license_badge} | ${license_description}`;
 
 	writeToFile(sanitizedTitle, allData);
 	
