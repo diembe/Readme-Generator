@@ -38,7 +38,7 @@ const questions = [
 		type: "list",
 		message: "Choose your Github License:",
 		name: "license",
-		choices: ["MIT License", "The Apache License", "The GPL License"]
+		choices: ["The MIT License", "The Apache License", "The GPL License"]
 	}
 ];
 
@@ -63,7 +63,16 @@ function init(questions) {
 
 	const sanitizedTitle = response.title;
 
-	const allData = `# ${response.title}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\nInstallation\nUsage Information\nContribution Guidelines\nTest Instructions\n\nLicense\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}## Test Instructions\n\n${response.test_instructions}\n\n`;
+	let chosenLicense = '';
+	if (response.license = "The MIT License") {
+		chosenLicense = "![MIT License](./assets/mit_license_1.png)"
+	} else if (response.license = "The Apache License") {
+		chosenLicense = "![Apache License](./assets/apache_license_1.png)"
+	} else if (response.license = "The GPL License") {
+		chosenLicense = "![GPL License](./assets/gpl_license_1.png)"
+	}
+
+	const allData = `# ${response.title}\n\n## Description\n\n${response.description}\n\n## Table of Contents\n\nInstallation\nUsage Information\nContribution Guidelines\nTest Instructions\n\nLicense\n\n## Installation\n\n${response.installation}\n\n## Usage Information\n\n${response.usage_info}\n\n## Contribution Guidelines\n\n${response.contrib_guidelines}\n\n## Test Instructions\n\n${response.test_instructions}\n\n## License\n\n${chosenLicense}`;
 
 	writeToFile(sanitizedTitle, allData);
 	
