@@ -5,7 +5,10 @@ Using the 'inquirer' library, Readme Generator asks the user relevant questions 
 [Github Link](https://github.com/diembe/Readme-Generator)
 
 ![CLI interface](https://github.com/diembe/Readme-Generator/blob/master/Develop/assets/screen-1.PNG)
+
 Input is taken in through inquirer's CLI interface
 
+
 ![CLI interface](https://github.com/diembe/Readme-Generator/blob/master/Develop/assets/screen-2.PNG)
+
 Multi-line sections (like Installation Instructions) are entered via user's default system text editor
