@@ -48,9 +48,10 @@ function writeToFile(fileName, data) {
 	console.log(data);
 
 	fs.writeFile(`${fileName}.md`, data, function (err) {
-	if (err) return console.log(err);
-		console.log('Error writing to file.');
-		console.log(err);
+		if (err) {
+			console.log('Error writing to file.');
+			console.log(err);
+		}	
 	});
 	//process.exit();
 }
